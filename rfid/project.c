@@ -1,39 +1,28 @@
 #include "m328_rfid.h"
 #include "rc522.h"
-//#include "Lcd.h"
+
 
 /*******************************
-*连线说明：
+*Port config
 *1--SS  <----->PB0
-*2--SCK <----->PB13
-*3--MOSI<----->PB15
-*4--MISO<----->PB14
-*5--悬空
+*2--SCK <----->PB5
+*3--MOSI<----->PB3
+*4--MISO<----->PB4
+*5--NA
 *6--GND <----->GND
 *7--RST <----->PB1
 *8--VCC <----->VCC
 ************************************/
 
-/************************************
-各文件功能说明：
-startup..s	系统的启动文件，无需考虑
-retarget.c	c语言的一些函数
-misc.c		包含一些中断的配置函数
-project		主函数
-initsys		主要是系统初始化函数
-rc522		射频卡的一些操作函数
-lcdili9320	lcd液晶屏的函数
-*/
 
 
-/*全局变量*/
-unsigned char CT[2];//卡类型
-unsigned char SN[4]; //卡号
+unsigned char CT[2];//
+unsigned char SN[4]; //
 uint8_t KEY[6]={0xff,0xff,0xff,0xff,0xff,0xff};
-/*函数声明*/
-void ShowID(uint16_t x,uint16_t y, uint8_t *p, uint16_t charColor, uint16_t bkColor);	 //显示卡的卡号，以十六进制显示
-void PutNum(uint16_t x,uint16_t y, int n1,uint8_t n0, uint16_t charColor, uint16_t bkColor);	//显示余额函数
-void Store(uint8_t *p,uint8_t store,uint8_t cash);//最重要的一个函数
+
+void ShowID(uint16_t x,uint16_t y, uint8_t *p, uint16_t charColor, uint16_t bkColor);	 //
+void PutNum(uint16_t x,uint16_t y, int n1,uint8_t n0, uint16_t charColor, uint16_t bkColor);	//
+void Store(uint8_t *p,uint8_t store,uint8_t cash);//
 uint8_t ReadData(uint8_t   addr,uint8_t *pKey,uint8_t *pSnr,uint8_t *dataout);
 uint8_t WriteData(uint8_t   addr,uint8_t *pKey,uint8_t *pSnr,uint8_t *datain);
 
@@ -202,7 +191,7 @@ void Store(uint8_t *p,uint8_t store,uint8_t cash)
 	uint8_t data[16];
 	uint8_t len=0;
 	uint8_t i=0;
-	int dec=0;
+	uint32_t dec=0;
 	uint8_t status;
 	uint8_t tmp;
 

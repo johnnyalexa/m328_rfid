@@ -463,7 +463,7 @@ char PcdComMF522(uint8_t   Command,
     uint8_t   waitFor = 0x00;
     uint8_t   lastBits;
     uint8_t   n;
-    uint16_t   i;
+    uint32_t   i;
     switch (Command)
     {
         case PCD_AUTHENT:

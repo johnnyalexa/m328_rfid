@@ -8,7 +8,11 @@
 
 
 void SPI_Init(){
-
+	/* Set MOSI and SCK output, all others input */
+	//DDR_SPI = (1<<DD_MOSI)|(1<<DD_SCK);
+	DDRB = (1<<PINB3)|(1<<PINB5);
+	/* Enable SPI, Master, set clock rate fck/16 */
+	SPCR = (1<<SPE)|(1<<MSTR)|(1<<SPR0);
 }
 
 void SPI_Write(uint8_t data){
