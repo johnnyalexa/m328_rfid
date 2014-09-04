@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "m328_rfid", "m328_rfid.cproj", "{D57658DC-1D3B-4F54-A8C4-F21043AF9A11}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D57658DC-1D3B-4F54-A8C4-F21043AF9A11}.Debug|AVR.ActiveCfg = Debug|AVR
+		{D57658DC-1D3B-4F54-A8C4-F21043AF9A11}.Debug|AVR.Build.0 = Debug|AVR
+		{D57658DC-1D3B-4F54-A8C4-F21043AF9A11}.Release|AVR.ActiveCfg = Release|AVR
+		{D57658DC-1D3B-4F54-A8C4-F21043AF9A11}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
